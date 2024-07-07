@@ -1,0 +1,72 @@
+{
+  "name": "uber-tunisia",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/uber-tunisia/src",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/vite:build",
+      "outputs": ["{options.outputPath}"],
+      "defaultConfiguration": "production",
+      "options": {
+        "outputPath": "dist/apps/uber-tunisia"
+      },
+      "configurations": {
+        "development": {
+          "mode": "development"
+        },
+        "production": {
+          "mode": "production"
+        }
+      }
+    },
+    "serve": {
+      "executor": "@nx/vite:dev-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "uber-tunisia:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "uber-tunisia:build:development",
+          "hmr": true
+        },
+        "production": {
+          "buildTarget": "uber-tunisia:build:production",
+          "hmr": false
+        }
+      }
+    },
+    "preview": {
+      "executor": "@nx/vite:preview-server",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "uber-tunisia:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "uber-tunisia:build:development"
+        },
+        "production": {
+          "buildTarget": "uber-tunisia:build:production"
+        }
+      }
+    },
+    "test": {
+      "executor": "@nx/vite:test",
+      "outputs": ["coverage/apps/uber-tunisia"],
+      "options": {
+        "passWithNoTests": true,
+        "reportsDirectory": "../../coverage/apps/uber-tunisia"
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["apps/uber-tunisia/**/*.ts"]
+      }
+    }
+  }
+}
