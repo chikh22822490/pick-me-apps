@@ -3,8 +3,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start": "nx serve uber-tunisia",
-    "build": "nx build uber-tunisia"
+    "start": "nx serve pick-me",
+    "build": "nx build pick-me"
   },
   "private": true,
   "dependencies": {

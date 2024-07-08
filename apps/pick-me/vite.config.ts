@@ -4,7 +4,7 @@ import vue from '@vitejs/plugin-vue'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 
 export default defineConfig({
-  cacheDir: '../../node_modules/.vite/uber-tunisia',
+  cacheDir: '../../node_modules/.vite/pick-me',
 
   server: {
     port: 4200,

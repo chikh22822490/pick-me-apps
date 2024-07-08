@@ -1,8 +1,8 @@
 {
-  "name": "uber-tunisia",
+  "name": "pick-me",
   "$schema": "../../node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "sourceRoot": "apps/uber-tunisia/src",
+  "sourceRoot": "apps/pick-me/src",
   "tags": [],
   "targets": {
     "build": {
@@ -10,7 +10,7 @@
       "outputs": ["{options.outputPath}"],
       "defaultConfiguration": "production",
       "options": {
-        "outputPath": "dist/apps/uber-tunisia"
+        "outputPath": "dist/apps/pick-me"
       },
       "configurations": {
         "development": {
@@ -25,15 +25,15 @@
       "executor": "@nx/vite:dev-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "uber-tunisia:build"
+        "buildTarget": "pick-me:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "uber-tunisia:build:development",
+          "buildTarget": "pick-me:build:development",
           "hmr": true
         },
         "production": {
-          "buildTarget": "uber-tunisia:build:production",
+          "buildTarget": "pick-me:build:production",
           "hmr": false
         }
       }
@@ -42,30 +42,30 @@
       "executor": "@nx/vite:preview-server",
       "defaultConfiguration": "development",
       "options": {
-        "buildTarget": "uber-tunisia:build"
+        "buildTarget": "pick-me:build"
       },
       "configurations": {
         "development": {
-          "buildTarget": "uber-tunisia:build:development"
+          "buildTarget": "pick-me:build:development"
         },
         "production": {
-          "buildTarget": "uber-tunisia:build:production"
+          "buildTarget": "pick-me:build:production"
         }
       }
     },
     "test": {
       "executor": "@nx/vite:test",
-      "outputs": ["coverage/apps/uber-tunisia"],
+      "outputs": ["coverage/apps/pick-me"],
       "options": {
         "passWithNoTests": true,
-        "reportsDirectory": "../../coverage/apps/uber-tunisia"
+        "reportsDirectory": "../../coverage/apps/pick-me"
       }
     },
     "lint": {
       "executor": "@nx/linter:eslint",
       "outputs": ["{options.outputFile}"],
       "options": {
-        "lintFilePatterns": ["apps/uber-tunisia/**/*.ts"]
+        "lintFilePatterns": ["apps/pick-me/**/*.ts"]
       }
     }
   }
