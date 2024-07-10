@@ -1,14 +1,23 @@
 <template>
   <div class="border-b flex justify-between h-16">
     <div class="flex items-center">
-      <RouterLink to="/"  class="hover:underline underline-offset-8 hover:bg-highlight h-full flex items-center px-6">
+      <RouterLink
+        to="/"
+        class="hover:underline underline-offset-8 hover:bg-highlight h-full flex items-center px-6"
+      >
         <img src="/pick-me-logo.png" alt="logo" class="h-14 w-14" />
         Acceuil
       </RouterLink>
-      <RouterLink to="/" class="hover:underline underline-offset-8 hover:bg-highlight h-full flex items-center px-4">
+      <RouterLink
+        to="/reservations"
+        class="hover:underline underline-offset-8 hover:bg-highlight h-full flex items-center px-4"
+      >
         Mes réservations
       </RouterLink>
-      <RouterLink to="/" class="hover:underline underline-offset-8 hover:bg-highlight h-full flex items-center px-4">
+      <RouterLink
+        to="/rides"
+        class="hover:underline underline-offset-8 hover:bg-highlight h-full flex items-center px-4"
+      >
         Mes voyages
       </RouterLink>
     </div>
@@ -64,10 +73,10 @@ import DropdownMenu from './DropdownMenu.vue'
 import { DefaultAvatar, LogoutIcon, ChevronDown, AccountIcon } from '../assets/icons'
 import { inject, onMounted, ref } from 'vue'
 import { AuthInstance } from '../utils'
-import { UsersClient } from '../api/userApi'
+import { UserClient } from '../api/userApi'
 
 const authInstance: AuthInstance = inject('authInstance') as AuthInstance
-const userClient = inject('userClient') as UsersClient
+const userClient = inject('userClient') as UserClient
 
 const emits = defineEmits<{ (e: 'logout'): void; (e: 'redirectToAdminDashboard'): void }>()
 

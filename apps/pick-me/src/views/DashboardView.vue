@@ -54,29 +54,64 @@
       </div>
 
       <p class="text-primary text-xl mt-6">Choisissez une date</p>
-      <DateTimePicker v-model="selectedDate" isTime class="mt-2" />
+      <DateTimePicker v-model="selectedDate" class="mt-2" />
     </div>
     <div class="col-span-3 space-y-2 grid grid-rows-[auto,1fr] overflow-hidden">
-      <!-- <div class="flex justify-end items-center">
-        <button
-          class="text-sm bg-primary text-white p-2 rounded-lg hover:bg-primary/20 hover:text-black"
-        >
-          Ajouter un voyage
-        </button>
-      </div> -->
       <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 overflow-auto">
-        <RideSnippet v-for="(ride, index) in fakeRides" :ride="ride" :key="index" />
+        <RideSnippet
+          v-if="availableRides.length > 0"
+          v-for="(ride, index) in filteredRides"
+          :ride="ride"
+          :key="index"
+        />
+        <p
+          v-else="availableRides.length > 0"
+          class="col-span-3 text-primary text-2xl font-semibold text-center"
+        >
+          Aucun voyage disponible
+        </p>
       </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, inject, onMounted, ref } from 'vue'
 import { DateTimePicker, RideSnippet } from '../components'
 import DropdownMenu from '../components/DropdownMenu.vue'
-import fakeRides from '../fakeData/fakeRides'
 import { mapFilters } from '../utils'
+import { DisplayRide, RideClient } from '../api'
+
+const rideClient: RideClient = inject('rideClient') as RideClient
+
+const availableRides = ref<DisplayRide[]>([])
+const isLoadingRides = ref<boolean>(false)
+async function loadRides() {
+  isLoadingRides.value = true
+  availableRides.value = await rideClient.getAllRides()
+  isLoadingRides.value = false
+}
+
+const filteredRides = computed(() => {
+  const filteredStates = availableRides.value.filter((ride) => {
+    if (selectedState.value) return ride.departure.includes(selectedState.value.stateName)
+    else return ride
+  })
+  const filteredRegions = filteredStates.filter((ride) => {
+    if (selectedRegion.value) return ride.departure.includes(selectedRegion.value)
+    else return ride
+  })
+  const filteredDates = filteredRegions.filter((ride) => {
+    if (selectedDate.value)
+      return (
+        ride.dateTime.getFullYear() === selectedDate.value.getFullYear() &&
+        ride.dateTime.getMonth() === selectedDate.value.getMonth() &&
+        ride.dateTime.getDate() === selectedDate.value.getDate()
+      )
+    else return ride
+  })
+  return filteredDates
+})
 
 const selectedState = ref<{
   stateName: string
@@ -84,4 +119,8 @@ const selectedState = ref<{
 }>()
 const selectedRegion = ref('')
 const selectedDate = ref<Date>()
+
+onMounted(() => {
+  loadRides()
+})
 </script>

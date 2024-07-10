@@ -4,7 +4,8 @@ import createRouter from './router'
 import './assets/styles.css'
 import { AuthInstance } from './utils'
 import axios from 'axios'
-import { UsersClient } from './api/userApi'
+import { UserClient } from './api/userApi'
+import { RideClient } from './api'
 
 const axiosInstance = axios.create({})
 axiosInstance.interceptors.request.use(
@@ -29,10 +30,12 @@ authInstance.CallLogin(main)
 
 async function main() {
   const app = createApp(AppVue)
-  const userClient: UsersClient = new UsersClient(axiosInstance)
+  const userClient: UserClient = new UserClient(axiosInstance)
+  const rideClient: RideClient = new RideClient(axiosInstance)
 
   app.use(createRouter())
   app.provide('authInstance', authInstance)
   app.provide('userClient', userClient)
+  app.provide('rideClient', rideClient)
   app.mount('#app')
 }

@@ -1,6 +1,6 @@
 import { AxiosInstance } from "axios"
 
-export class UsersClient {
+export class UserClient {
   _axiosInstance: AxiosInstance
 
   constructor(axiosInstance: AxiosInstance) {

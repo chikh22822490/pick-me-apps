@@ -1,13 +1,13 @@
 <template>
   <div class="flex flex-col gap-y-4 border rounded-lg shadow-md p-4 w-full">
     <div class="w-full">
-      <img :src="ride.image" alt="car" />
+      <img :src="ride.carImage" alt="car" />
     </div>
     <div class="space-y-4">
       <p class="xl:text-2xl lg:text-lg text-2xl">
         Départ, région {{ '---->' }} Destination, région
       </p>
-      <p class="xl:text-2xl lg:text-lg text-2xl">{{ formatDate(ride.date) }}</p>
+      <p class="xl:text-2xl lg:text-lg text-2xl">{{ formatDate(ride.dateTime) }}</p>
       <p class="xl:text-2xl lg:text-lg text-2xl">{{ ride.price }} TND</p>
       <div class="flex justify-center">
         <button
@@ -20,8 +20,9 @@
   </div>
 </template>
 <script setup lang="ts">
+import { DisplayRide } from '../api'
 import { formatDate } from '../utils'
 defineProps<{
-  ride: { image: string; date: Date; price: number }
+  ride: DisplayRide
 }>()
 </script>
