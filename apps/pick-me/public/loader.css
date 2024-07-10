@@ -8,7 +8,7 @@
 
 .loading-logo {
     position: absolute;
-    inset-block-start: 40%;
+    inset-block-start: 30%;
     inset-inline-start: calc(50% - 120px);
 }
 
@@ -19,7 +19,7 @@
     block-size: 50px;
     border-radius: 50%;
     inline-size: 50px;
-    inset-block-start: 50%;
+    inset-block-start: 55%;
     inset-inline-start: calc(50% - 17px);
 }
 

@@ -11,7 +11,7 @@
       <p class="xl:text-2xl lg:text-lg text-2xl">{{ ride.price }} TND</p>
       <div class="flex justify-center">
         <button
-          class="bg-green-700 text-white hover:bg-green-400 hover:text-black px-4 py-1 rounded-lg"
+          class="bg-success text-white hover:bg-success/40 hover:text-black px-4 py-1 rounded-lg"
         >
           Plus d'infos
         </button>

@@ -7,7 +7,7 @@
       :clearable="clearable"
       :allowed-dates="availableDates"
       :range="isRange"
-      :max-date="maxDate ?? new Date(Date.now())"
+      :max-date="maxDate"
       :min-date="minDate"
       :start-time="startTime"
       :enable-time-picker="isTime"

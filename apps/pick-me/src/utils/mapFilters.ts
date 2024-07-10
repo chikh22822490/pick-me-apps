@@ -1,7 +1,7 @@
 export default [
   {
-    nom: 'Tunis',
-    delegations: [
+    stateName: 'Tunis',
+    regions: [
       'Carthage',
       'La Médina',
       'Bab Bhar',
@@ -26,8 +26,8 @@ export default [
     ]
   },
   {
-    nom: 'Ariana',
-    delegations: [
+    stateName: 'Ariana',
+    regions: [
       'Ariana Ville',
       'Soukra',
       'Raouède',
@@ -38,8 +38,8 @@ export default [
     ]
   },
   {
-    nom: 'Manouba',
-    delegations: [
+    stateName: 'Manouba',
+    regions: [
       'Manouba',
       'Oued Ellil',
       'Tebourba',
@@ -51,8 +51,8 @@ export default [
     ]
   },
   {
-    nom: 'Ben Arous',
-    delegations: [
+    stateName: 'Ben Arous',
+    regions: [
       'Ben Arous',
       'Nouvelle Médina',
       'Mourouj',
@@ -68,8 +68,8 @@ export default [
     ]
   },
   {
-    nom: 'Nabeul',
-    delegations: [
+    stateName: 'Nabeul',
+    regions: [
       'Nabeul',
       'Dar Chaâbane Elfehri',
       'Béni Khiar',
@@ -89,8 +89,8 @@ export default [
     ]
   },
   {
-    nom: 'Bizerte',
-    delegations: [
+    stateName: 'Bizerte',
+    regions: [
       'Bizerte Nord',
       'Jarzouna',
       'Bizerte Sud',
@@ -108,12 +108,12 @@ export default [
     ]
   },
   {
-    nom: 'Zaghouan',
-    delegations: ['Zaghouan', 'Zériba', 'Bir Mecharga', 'Fahs', 'Nadhour', 'Saouaf']
+    stateName: 'Zaghouan',
+    regions: ['Zaghouan', 'Zériba', 'Bir Mecharga', 'Fahs', 'Nadhour', 'Saouaf']
   },
   {
-    nom: 'Sousse',
-    delegations: [
+    stateName: 'Sousse',
+    regions: [
       'Sousse Ville',
       'Zaouia Ksiba Thrayat',
       'Sousse Ryadh',
@@ -133,8 +133,8 @@ export default [
     ]
   },
   {
-    nom: 'Monastir',
-    delegations: [
+    stateName: 'Monastir',
+    regions: [
       'Monastir',
       'Ouerdanine',
       'Sahline',
@@ -151,8 +151,8 @@ export default [
     ]
   },
   {
-    nom: 'Mahdia',
-    delegations: [
+    stateName: 'Mahdia',
+    regions: [
       'Mahdia',
       'Boumerdes',
       'Ouled Chamekh',
@@ -167,8 +167,8 @@ export default [
     ]
   },
   {
-    nom: 'Sfax',
-    delegations: [
+    stateName: 'Sfax',
+    regions: [
       'Sfax Ville',
       'Sfax Ouest',
       'Sakiet Ezzit',
@@ -188,8 +188,8 @@ export default [
     ]
   },
   {
-    nom: 'Béja',
-    delegations: [
+    stateName: 'Béja',
+    regions: [
       'Béja nord',
       'Béja sud',
       'Amdoun',
@@ -202,8 +202,8 @@ export default [
     ]
   },
   {
-    nom: 'Jendouba',
-    delegations: [
+    stateName: 'Jendouba',
+    regions: [
       'Jendouba',
       'Jendouba Nord',
       'Boussalem',
@@ -216,8 +216,8 @@ export default [
     ]
   },
   {
-    nom: 'Kef',
-    delegations: [
+    stateName: 'Kef',
+    regions: [
       'Kef Ouest',
       'Kef Est',
       'Nebeur',
@@ -232,8 +232,8 @@ export default [
     ]
   },
   {
-    nom: 'Siliana',
-    delegations: [
+    stateName: 'Siliana',
+    regions: [
       'Siliana nord',
       'Siliana sud',
       'Bouarada',
@@ -248,8 +248,8 @@ export default [
     ]
   },
   {
-    nom: 'Kairouan',
-    delegations: [
+    stateName: 'Kairouan',
+    regions: [
       'Kairouan Nord',
       'Kairouan Sud',
       'Chebika',
@@ -264,8 +264,8 @@ export default [
     ]
   },
   {
-    nom: 'Sidi Bouzid',
-    delegations: [
+    stateName: 'Sidi Bouzid',
+    regions: [
       'Sidi Bouzid Ouest',
       'Sidi Bouzid Est',
       'Jelma',
@@ -281,8 +281,8 @@ export default [
     ]
   },
   {
-    nom: 'Kasserine',
-    delegations: [
+    stateName: 'Kasserine',
+    regions: [
       'Kasserine Nord',
       'Kasserine Sud',
       'Azzouhour',
@@ -299,8 +299,8 @@ export default [
     ]
   },
   {
-    nom: 'Gabès',
-    delegations: [
+    stateName: 'Gabès',
+    regions: [
       'Gabès ville',
       'Gabès ouest',
       'Gabès sud',
@@ -314,8 +314,8 @@ export default [
     ]
   },
   {
-    nom: 'Medenine',
-    delegations: [
+    stateName: 'Medenine',
+    regions: [
       'Mednine Nord',
       'Mednine Sud',
       'Béni khedach',
@@ -328,8 +328,8 @@ export default [
     ]
   },
   {
-    nom: 'Gafsa',
-    delegations: [
+    stateName: 'Gafsa',
+    regions: [
       'Gafsa Nord',
       'Sidi Aich',
       'El Ksar',
@@ -344,12 +344,12 @@ export default [
     ]
   },
   {
-    nom: 'Tozeur',
-    delegations: ['Tozeur', 'Degueche', 'Tameghza', 'Nefta', 'Hezoua']
+    stateName: 'Tozeur',
+    regions: ['Tozeur', 'Degueche', 'Tameghza', 'Nefta', 'Hezoua']
   },
   {
-    nom: 'Tataouine',
-    delegations: [
+    stateName: 'Tataouine',
+    regions: [
       'Tataouine Nord',
       'Tataouine Sud',
       'Smar',
@@ -360,7 +360,7 @@ export default [
     ]
   },
   {
-    nom: 'Kébili',
-    delegations: ['Kébili Sud', 'Kébili Nord', 'Souk El Ahad', 'Douz nord', 'Douz sud', 'El Faouar']
+    stateName: 'Kébili',
+    regions: ['Kébili Sud', 'Kébili Nord', 'Souk El Ahad', 'Douz nord', 'Douz sud', 'El Faouar']
   }
 ]

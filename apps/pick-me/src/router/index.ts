@@ -10,6 +10,11 @@ export default () => {
           name: 'Home'
         },
         component: () => import('../views/DashboardView.vue')
+      },
+      {
+        path: '/profile',
+        name: 'profile',
+        component: () => import('../views/ProfileSettingView.vue')
       }
     ]
   })
