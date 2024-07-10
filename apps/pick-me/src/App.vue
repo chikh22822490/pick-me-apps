@@ -1,6 +1,6 @@
 <template>
-  <div class="h-screen w-screen overflow-hidden">
-    <Snackbar />
+  <Snackbar />
+  <div class="h-screen grid grid-rows-[auto,1fr] overflow-hidden">
     <AppNav />
     <RouterView class="p-4" />
   </div>

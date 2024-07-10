@@ -10,7 +10,19 @@ export class RideClient {
 
   async getAllRides(): Promise<DisplayRide[]> {
     try {
-      const { data: rides } = await this._axiosInstance.get('/api/ride/all')
+      const { data: rides } = await this._axiosInstance.get('/api/rides/all')
+      return rides
+    } catch (error) {
+      if (error instanceof Error) {
+        throw new Error(error.message)
+      } else {
+        throw new Error('Unknown error occurred')
+      }
+    }
+  }
+  async getUserRides(): Promise<DisplayRide[]> {
+    try {
+      const { data: rides } = await this._axiosInstance.get('/api/rides')
       return rides
     } catch (error) {
       if (error instanceof Error) {
