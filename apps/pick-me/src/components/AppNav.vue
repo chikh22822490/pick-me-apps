@@ -1,14 +1,23 @@
 <template>
-  <div class="h-16 border-b flex justify-between">
-    <RouterLink to="/" class="my-auto ml-4">
-      <img src="/pick-me-logo.png" alt="logo" class="h-14 w-14" />
-    </RouterLink>
+  <div class="border-b flex justify-between h-16">
+    <div class="flex items-center">
+      <RouterLink to="/"  class="hover:underline underline-offset-8 hover:bg-highlight h-full flex items-center px-6">
+        <img src="/pick-me-logo.png" alt="logo" class="h-14 w-14" />
+        Acceuil
+      </RouterLink>
+      <RouterLink to="/" class="hover:underline underline-offset-8 hover:bg-highlight h-full flex items-center px-4">
+        Mes réservations
+      </RouterLink>
+      <RouterLink to="/" class="hover:underline underline-offset-8 hover:bg-highlight h-full flex items-center px-4">
+        Mes voyages
+      </RouterLink>
+    </div>
     <div class="w-60 border-l h-full">
       <DropdownMenu :placement="'bottom-end'" :arrow="false" :offset="[0, 0]">
         <template #activator="{ show }">
           <button
             type="button"
-            class="px-4 h-full w-full flex justify-between items-center rounded-lg gap-3"
+            class="px-4 h-full w-full flex justify-between items-center gap-3 hover:bg-highlight"
             @click="show()"
             aria-label="profile menu"
           >

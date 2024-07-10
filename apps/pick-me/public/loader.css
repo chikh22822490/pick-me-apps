@@ -8,7 +8,7 @@
 
 .loading-logo {
     position: absolute;
-    inset-block-start: 30%;
+    inset-block-start: 25%;
     inset-inline-start: calc(50% - 120px);
 }
 
@@ -19,7 +19,7 @@
     block-size: 50px;
     border-radius: 50%;
     inline-size: 50px;
-    inset-block-start: 55%;
+    inset-block-start: 50%;
     inset-inline-start: calc(50% - 17px);
 }
 
@@ -71,4 +71,24 @@
         opacity: 1;
         transform: rotate(1turn);
     }
+}
+
+::-webkit-scrollbar {
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+    background: '#EDF5F7';
+    border-radius: 5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 5rem;
+    background: #14bc9b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    border-radius: 5rem;
+    background: #a1e4d7;
 }

@@ -16,7 +16,7 @@ module.exports = {
         'dark-background': '#0F172A',
         'btn-background': '#1C1C1C0D',
         highlight: '#EDF5F7',
-        success: '#00806c',
+        success: '#14bc9b',
         info: '#22d3ee',
         warning: '#facc15',
         error: '#b91943'
