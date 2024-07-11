@@ -1,11 +1,11 @@
 <template>
   <div class="flex flex-col gap-y-4 border rounded-lg shadow-md p-4 w-full">
     <div class="w-full">
-      <img :src="ride.carImage" alt="car" />
+      <img :src="ride.carImage" alt="car" class="max-h-48 mx-auto" />
     </div>
     <div class="space-y-4">
       <p class="xl:text-2xl lg:text-lg text-2xl">
-        Départ, région {{ '---->' }} Destination, région
+        {{ ride.departure }} {{ '---->' }} {{ ride.destination }}
       </p>
       <p class="xl:text-2xl lg:text-lg text-2xl">{{ formatDate(ride.dateTime) }}</p>
       <p class="xl:text-2xl lg:text-lg text-2xl">{{ ride.price }} TND</p>

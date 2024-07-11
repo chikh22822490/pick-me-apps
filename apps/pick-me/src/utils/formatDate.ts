@@ -6,10 +6,12 @@ export default function formatDate(date: Date | undefined): string {
     day: '2-digit',
     month: '2-digit',
     year: 'numeric',
-    hour: "2-digit",
-    minute: "2-digit",
+    hour: '2-digit',
+    minute: '2-digit'
   }
 
-  const formatedDateTimeString = new Date(date).toLocaleTimeString('fr-FR', dateFormatOptions)
+  const formatedDateTimeString = new Date(date)
+    .toLocaleTimeString('fr-FR', dateFormatOptions)
+    .replace(' ', ', ')
   return formatedDateTimeString
 }

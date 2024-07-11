@@ -261,10 +261,10 @@ import { Card, useSnackbar } from '../components'
 import { AuthInstance, fileToBase64 } from '../utils'
 import { inject, onMounted, ref } from 'vue'
 import { LoadingIcon, EditIcon, EyeIcon, DefaultAvatar } from '../assets/icons'
-import { UsersClient } from '../api/userApi'
+import { UserClient } from '../api/userApi'
 
 const authInstance: AuthInstance = inject('authInstance') as AuthInstance
-const userClient = inject('userClient') as UsersClient
+const userClient: UserClient = inject('userClient') as UserClient
 const { openSnackbar } = useSnackbar()
 const isLoading = ref(false)
 const user = ref({

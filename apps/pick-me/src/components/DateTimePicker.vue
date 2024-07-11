@@ -3,7 +3,7 @@
     <VueDatePicker
       :uid="inputId"
       v-model="selectedDate"
-      format="dd/MM/yyyy"
+      :format="format"
       :clearable="clearable"
       :allowed-dates="availableDates"
       :range="isRange"
@@ -51,7 +51,7 @@ withDefaults(
   {
     isRange: false,
     isTime: false,
-    clearable: false,
+    clearable: true,
     teleport: false,
     teleportCenter: false,
     autoPosition: false,
@@ -77,7 +77,7 @@ const startTime = ref({ hours: 0, minutes: 0, seconds: 0 })
   --dp-primary-disabled-color: #86888a;
   --dp-primary-text-color: #f8f5f5;
   --dp-secondary-color: #96959586;
-  --dp-border-color: #ddd;
+  --dp-border-color: #ccdadc;
   --dp-menu-border-color: #ddd;
   --dp-border-color-hover: #004452;
   --dp-disabled-color: #f6f6f6;
