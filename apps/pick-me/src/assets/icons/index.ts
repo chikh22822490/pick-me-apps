@@ -11,6 +11,7 @@ import DefaultAvatar from './DefaultAvatar.vue'
 import EditIcon from './EditIcon.vue'
 import EyeIcon from './EyeIcon.vue'
 import LoadingIcon from './LoadingIcon.vue'
+import AvailablesSeatsIcon from'./AvailableSeatsIcon.vue'
 
 export {
   SuccessIcon,
@@ -25,5 +26,6 @@ export {
   DefaultAvatar,
   EditIcon,
   EyeIcon,
-  LoadingIcon
+  LoadingIcon,
+  AvailablesSeatsIcon
 }

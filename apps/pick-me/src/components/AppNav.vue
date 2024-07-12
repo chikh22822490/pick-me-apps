@@ -1,5 +1,5 @@
 <template>
-  <div class="border-b flex justify-between h-16">
+  <div class="sticky top-0 bg-white z-10 border-b flex justify-between h-16">
     <div class="flex items-center">
       <RouterLink
         to="/"

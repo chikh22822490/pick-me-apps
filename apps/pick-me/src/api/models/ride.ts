@@ -8,4 +8,7 @@ export type DisplayRide = {
   departure: string
   destination: string
   carImage: string
+  phone: string
+  whatsapp: string
+  email: string
 }

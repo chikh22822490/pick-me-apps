@@ -1,7 +1,7 @@
 <template>
-  <div class="grid grid-cols-4 gap-4 h-full">
-    <div class="col-span-1 flex flex-col justify-between">
-      <div class="col-span-1 border border-primary/20 rounded-lg h-fit p-2 bg-highlight">
+  <div class="grid grid-cols-4 h-full gap-4">
+    <div class="fixed top-20 w-1/4 pr-4 col-span-1 flex flex-col justify-between">
+      <div class="w-full col-span-1 border border-primary/20 rounded-lg p-2 bg-highlight">
         <p class="text-primary text-xl">Choisissez votre départ</p>
         <div class="grid grid-cols-[auto,1fr] w-full items-center gap-2 mt-2">
           <p class="text-primary">Ville:</p>
@@ -134,10 +134,14 @@
           "
         />
       </div>
-      <CreateNewRideModal />
+      <CreateNewRideModal @rideCreated="loadRides" class="fixed bottom-4 left-4" />
     </div>
-    <div class="col-span-3 space-y-2 grid grid-rows-[auto,1fr] overflow-hidden">
-      <div class="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 overflow-auto">
+    <div></div>
+    <div class="col-span-3 space-y-2 grid grid-rows-[auto,1fr] overflow-auto">
+      <div v-if="isLoadingRides" class="flex justify-center py-10">
+        <LoadingIcon class="animate-spin w-32 h-32" />
+      </div>
+      <div v-else class="grid lg:grid-cols-2 xl:grid-cols-3 gap-4 overflow-auto">
         <RideSnippet
           v-if="availableRides.length > 0"
           v-for="(ride, index) in filteredRides"
@@ -162,6 +166,7 @@ import DropdownMenu from '../components/DropdownMenu.vue'
 import { mapFilters } from '../utils'
 import { DisplayRide, RideClient } from '../api'
 import CreateNewRideModal from './CreateNewRideModal.vue'
+import { LoadingIcon } from '../assets/icons'
 
 const rideClient: RideClient = inject('rideClient') as RideClient
 
@@ -170,7 +175,9 @@ const isLoadingRides = ref<boolean>(false)
 async function loadRides() {
   isLoadingRides.value = true
   availableRides.value = await rideClient.getUserRides()
-  isLoadingRides.value = false
+  setTimeout(() => {
+    isLoadingRides.value = false
+  }, 1000)
 }
 
 const filteredRides = computed(() => {
@@ -221,4 +228,5 @@ const selectedDate = ref<Date>()
 onMounted(() => {
   loadRides()
 })
+
 </script>

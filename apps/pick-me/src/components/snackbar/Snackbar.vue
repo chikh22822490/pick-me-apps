@@ -2,7 +2,7 @@
   <Transition name="fade-slide">
     <div
       v-if="isSnackbarOpen"
-      class="absolute w-full left-0 bottom-5 z-50 flex justify-center"
+      class="fixed w-full left-0 bottom-5 z-50 flex justify-center"
       @click="closeSnackbar"
       :key="snackbarMessage + snackbarVariant"
     >

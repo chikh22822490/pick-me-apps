@@ -1,10 +1,12 @@
 <template>
-  <button
-    class="w-full bg-primary text-white p-2 rounded-lg hover:bg-primary/20 hover:text-black mt-4"
-    @click="isNewRideModalOpen = true"
-  >
-    Ajouter un voyage
-  </button>
+  <div class="fixed bottom-4 left-4 w-1/4 flex justify-center pr-4">
+    <button
+      class="bg-primary text-white p-2 w-full rounded-lg hover:bg-primary/20 hover:text-black mt-4"
+      @click="isNewRideModalOpen = true"
+    >
+      Ajouter un voyage
+    </button>
+  </div>
   <Modal v-model="isNewRideModalOpen">
     <template #modalContent>
       <form class="bg-white w-[500px] rounded-lg p-4">
@@ -229,6 +231,7 @@ import { Modal, DropdownMenu, DateTimePicker, useSnackbar } from '../components'
 import { mapFilters } from '../utils'
 import { RideClient } from '../api'
 
+const emit = defineEmits<(e: 'rideCreated') => void>()
 const rideClient: RideClient = inject('rideClient') as RideClient
 const { openSnackbar } = useSnackbar()
 
@@ -285,11 +288,12 @@ async function createNewRide() {
       phone.value!,
       whatsapp.value!
     )
+    emit('rideCreated')
     openSnackbar('Voyage créé avec succès', 'success')
     resetForm()
   } catch (error) {
     openSnackbar(
-      'Une erreur est survenu lors de la création du voyage, Veuillez réessayer ultérieurement',
+      'Une erreur est survenue. Veuillez réessayer ultérieurement',
       'error'
     )
   }

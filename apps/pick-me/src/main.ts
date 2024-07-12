@@ -6,6 +6,7 @@ import { AuthInstance } from './utils'
 import axios from 'axios'
 import { UserClient } from './api/userApi'
 import { RideClient } from './api'
+import { ReservationClient } from './api/reservationApi'
 
 const axiosInstance = axios.create({})
 axiosInstance.interceptors.request.use(
@@ -32,10 +33,12 @@ async function main() {
   const app = createApp(AppVue)
   const userClient: UserClient = new UserClient(axiosInstance)
   const rideClient: RideClient = new RideClient(axiosInstance)
+  const reservationClient: ReservationClient = new ReservationClient(axiosInstance)
 
   app.use(createRouter())
   app.provide('authInstance', authInstance)
   app.provide('userClient', userClient)
   app.provide('rideClient', rideClient)
+  app.provide('reservationClient', reservationClient)
   app.mount('#app')
 }
